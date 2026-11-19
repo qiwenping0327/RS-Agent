@@ -1,0 +1,37 @@
+{
+  "UserPromptSubmit": [
+    {
+      "hooks": [
+        {
+          "type": "http",
+          "url": "http://localhost:8000/hooks/route-task",
+          "timeout": 5000
+        }
+      ]
+    }
+  ],
+  "PreToolUse": [
+    {
+      "matcher": "/^mcp__rs_agent__/",
+      "hooks": [
+        {
+          "type": "http",
+          "url": "http://localhost:8000/hooks/pre-tool-use",
+          "timeout": 5000
+        }
+      ]
+    }
+  ],
+  "PostToolUseFailure": [
+    {
+      "matcher": "/^mcp__rs_agent__/",
+      "hooks": [
+        {
+          "type": "http",
+          "url": "http://localhost:8000/hooks/tool-error",
+          "timeout": 30000
+        }
+      ]
+    }
+  ]
+}

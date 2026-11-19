@@ -1,0 +1,102 @@
+{
+  "name": "rs-agent",
+  "version": "0.3.0",
+  "description": "遥感智能分析 Agent: 影像下载/预处理/智能解译/SAR分析/模型推理/可视化/报告全流程自动化",
+  "hooks": "hooks/hooks.json",
+  "mcpServers": {
+    "rs-agent": {
+      "command": "${PILOTDECK_CONDA_PYTHON}",
+      "args": ["-m", "rs_engine.mcp_server"],
+      "cwd": "${PILOTDECK_REPO_ROOT}/rs-engine",
+      "env": {
+        "RS_WORKSPACE": "${PILOTDECK_REPO_ROOT}/data",
+        "RS_ENGINE_HOME": "${PILOTDECK_REPO_ROOT}/rs-engine"
+      },
+      "instructions": "rs-agent 遥感核心服务：提供影像下载(rs_download)、预处理(rs_preprocess)、智能分析(rs_analyze，支持NDVI/NDWI/EVI/SAVI等指数计算、地物分类、变化检测)、可视化(rs_visualize)、报告生成(rs_report)、SAR分析(rs_sar_analysis)、深度学习模型推理(rs_model_inference，支持YOLOv8目标检测/U-Net语义分割/BIT变化检测)。影像分析任务首选此服务器。"
+    },
+    "rs-analysis": {
+      "command": "${PILOTDECK_CONDA_PYTHON}",
+      "args": ["-m", "rs_engine.earth_agent_tools.analysis"],
+      "cwd": "${PILOTDECK_REPO_ROOT}/rs-engine",
+      "env": {
+        "RS_WORKSPACE": "${PILOTDECK_REPO_ROOT}/data",
+        "RS_ENGINE_HOME": "${PILOTDECK_REPO_ROOT}/rs-engine"
+      },
+      "instructions": "rs-analysis 时间序列分析服务：提供线性趋势计算(compute_linear_trend)、Mann-Kendall趋势检验(mann_kendall_test)、Sen斜率估计(sens_slope)、STL季节分解(stl_decompose)、变点检测(detect_change_points)、自相关函数(autocorrelation_function)、季节性检测(detect_seasonality_acf)、Getis-Ord Gi*热点分析(getis_ord_gi_star)、热点方向分析(analyze_hotspot_direction)、尖峰计数(count_spikes_from_values)。时间序列分析和趋势检测首选此服务器。"
+    },
+    "rs-index": {
+      "command": "${PILOTDECK_CONDA_PYTHON}",
+      "args": ["-m", "rs_engine.earth_agent_tools.index"],
+      "cwd": "${PILOTDECK_REPO_ROOT}/rs-engine",
+      "env": {
+        "RS_WORKSPACE": "${PILOTDECK_REPO_ROOT}/data",
+        "RS_ENGINE_HOME": "${PILOTDECK_REPO_ROOT}/rs-engine"
+      },
+      "instructions": "rs-index 光谱指数计算服务：提供NDVI/NDWI/EVI/SAVI/MNDWI/NDBI等光谱指数计算、波段运算(band_math)、多波段读取与统计。计算遥感光谱指数首选此服务器。"
+    },
+    "rs-inversion": {
+      "command": "${PILOTDECK_CONDA_PYTHON}",
+      "args": ["-m", "rs_engine.earth_agent_tools.inversion"],
+      "cwd": "${PILOTDECK_REPO_ROOT}/rs-engine",
+      "env": {
+        "RS_WORKSPACE": "${PILOTDECK_REPO_ROOT}/data",
+        "RS_ENGINE_HOME": "${PILOTDECK_REPO_ROOT}/rs-engine"
+      },
+      "instructions": "rs-inversion 反演服务：提供地表温度反演、土壤水分反演、植被参数反演、大气校正参数计算、辐射定标、比辐射率计算等。遥感物理量反演首选此服务器。"
+    },
+    "rs-perception": {
+      "command": "${PILOTDECK_CONDA_PYTHON}",
+      "args": ["-m", "rs_engine.earth_agent_tools.perception"],
+      "cwd": "${PILOTDECK_REPO_ROOT}/rs-engine",
+      "env": {
+        "RS_WORKSPACE": "${PILOTDECK_REPO_ROOT}/data",
+        "RS_ENGINE_HOME": "${PILOTDECK_REPO_ROOT}/rs-engine"
+      },
+      "instructions": "rs-perception 感知与分割服务：提供阈值分割(threshold_segmentation)、栅格转矢量(raster_to_vector，将二值掩膜转为SHP矢量文件)、水体提取(extract_water_bodies，阈值分割+矢量化的一步式水体提取工具，NIR波段水体提取使用invert=True)、SAM2语义分割(SAM2，需要预计算结果或模型权重)、场景分类(MSCN/RemoteCLIP)、目标检测(SM3Det/Strip_R_CNN，需要预计算结果或模型权重)、视觉定位(RemoteSAM)、计数(InstructSAM)、变化检测(ChangeOS)、轮廓统计(count_skeleton_contours)、框扩展(bbox_expansion)、框面积计算(calculate_bbox_area)、质心计算(bboxes2centroids)、质心距离(centroid_distance_extremes)、阈值以上像素计数(count_above_threshold)。【重要】对于水体分割任务：首选 extract_water_bodies 工具（一步完成分割和矢量导出），或使用 threshold_segmentation + raster_to_vector 组合。SAM2/SM3Det/Strip_R_CNN 等深度学习模型需要 model_results.csv 或模型权重，无模型时请使用阈值分割代替。"
+    },
+    "rs-statistics": {
+      "command": "${PILOTDECK_CONDA_PYTHON}",
+      "args": ["-m", "rs_engine.earth_agent_tools.statistics"],
+      "cwd": "${PILOTDECK_REPO_ROOT}/rs-engine",
+      "env": {
+        "RS_WORKSPACE": "${PILOTDECK_REPO_ROOT}/data",
+        "RS_ENGINE_HOME": "${PILOTDECK_REPO_ROOT}/rs-engine"
+      },
+      "instructions": "rs-statistics 统计分析服务：提供均值/方差/标准差/中位数/分位数等描述性统计、直方图计算、像素值频率统计、类别面积统计、栅格代数运算、重分类、掩膜统计、波段相关性计算、散点图数据生成、Z-score标准化、异常值检测等。遥感数据统计分析首选此服务器。"
+    },
+    "knowledge-base": {
+      "command": "${PILOTDECK_CONDA_PYTHON}",
+      "args": ["-m", "open_earth_engine.knowledge.knowledge_mcp_server"],
+      "cwd": "${PILOTDECK_REPO_ROOT}/open-earth-engine",
+      "env": {
+        "KNOWLEDGE_DB_PATH": "${PILOTDECK_REPO_ROOT}/data/knowledge.db"
+      },
+      "instructions": "knowledge-base 知识库检索服务：提供知识库向量检索(knowledge_search，支持hybrid/vector/keyword三种检索模式)、知识条目列表(knowledge_list，按类型和关键词筛选)、知识条目详情(knowledge_detail)、网页搜索(web_search，搜索互联网获取最新资料，支持中文和英文查询)、知识条目创建(knowledge_create，将学习内容存入知识库)、知识条目更新(knowledge_update，更新已有知识条目)。当用户询问遥感知识、工具使用方法、最佳实践、工作流程等问题时，优先使用此服务检索相关知识。当用户要求学习新内容或搜索最新资料时，使用 web_search 工具，然后使用 knowledge_create 将学习到的知识存入知识库。检索模式说明：hybrid=混合检索(推荐)、vector=向量语义检索、keyword=关键词检索。知识条目类型：geoknowledge(地理知识)、tool_doc(工具文档)、best_practice(最佳实践)、workflow(工作流程)、faq(常见问题)、custom(自定义)。"
+    }
+  },
+  "commands": [
+    "commands/rs-download.md",
+    "commands/rs-analyze.md",
+    "commands/rs-report.md"
+  ],
+  "skills": [
+    "skills/rs-basic",
+    "skills/rs-sar",
+    "skills/rs-model",
+    "skills/rs-cartography"
+  ],
+  "settings": {
+    "faultTolerance": {
+      "defaultRetryTimes": 3,
+      "defaultTimeout": 3600,
+      "breakPointSaveInterval": 60
+    },
+    "resourceControl": {
+      "defaultCpuQuota": 2,
+      "defaultMemoryQuota": 8192,
+      "defaultDiskQuota": 102400,
+      "gpuQuotaPerTask": 1
+    },
+    "hookHttpPort": 8000
+  }
+}

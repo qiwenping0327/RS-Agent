@@ -1,0 +1,60 @@
+{
+  "fault_solutions": [
+    {
+      "error_pattern": "timeout|ConnectionTimeout|ReadTimeout",
+      "tool": "rs_download",
+      "diagnosis": "网络连接超时，可能是数据源服务响应慢",
+      "solution": "检查网络连接，增加超时时间，或更换数据源",
+      "severity": "medium"
+    },
+    {
+      "error_pattern": "401|403|Unauthorized|Forbidden",
+      "tool": "rs_download",
+      "diagnosis": "API 认证失败，凭证无效或过期",
+      "solution": "检查 Copernicus/USGS API 凭证是否有效",
+      "severity": "high"
+    },
+    {
+      "error_pattern": "NoSpaceLeft|ENOSPC|disk full",
+      "tool": "*",
+      "diagnosis": "磁盘空间不足",
+      "solution": "清理工作空间，或更换输出目录到大容量磁盘",
+      "severity": "high"
+    },
+    {
+      "error_pattern": "OutOfMemory|OOM|MemoryError",
+      "tool": "rs_preprocess",
+      "diagnosis": "内存不足，影像数据过大",
+      "solution": "减小处理区域范围，或降低分块大小",
+      "severity": "high"
+    },
+    {
+      "error_pattern": "InvalidProjection|CRS|CannotReproject",
+      "tool": "rs_preprocess",
+      "diagnosis": "投影信息错误或缺失",
+      "solution": "检查输入影像的 CRS 信息，手动指定目标投影",
+      "severity": "medium"
+    },
+    {
+      "error_pattern": "ZeroDivisionError",
+      "tool": "rs_analyze",
+      "diagnosis": "指数计算分母为零",
+      "solution": "检查影像数据是否有效，可能存在全零波段",
+      "severity": "low"
+    },
+    {
+      "error_pattern": "CUDA|out of memory|GPU",
+      "tool": "rs_model_inference",
+      "diagnosis": "GPU 内存不足",
+      "solution": "减小 batch_size，或使用 CPU 模式",
+      "severity": "medium"
+    },
+    {
+      "error_pattern": "ModelNotFound|FileNotFound",
+      "tool": "rs_model_inference",
+      "diagnosis": "模型权重文件缺失",
+      "solution": "下载预训练模型权重到 /opt/rs-engine/models/",
+      "severity": "high"
+    }
+  ]
+}

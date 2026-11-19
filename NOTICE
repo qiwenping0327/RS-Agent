@@ -1,0 +1,31 @@
+RsAgent
+Copyright (c) 2026 RsAgent Contributors
+
+This product is a modified version of PilotDeck
+(https://github.com/OpenBMB/PilotDeck), which is licensed under the
+GNU Affero General Public License, version 3 (AGPL-3.0).
+
+Upstream copyright:
+Copyright (c) 2026 the PilotDeck project authors and contributors.
+Please refer to the upstream repository for the full list of contributors.
+
+This project is not endorsed by, affiliated with, or sponsored by the
+PilotDeck project, OpenBMB, Tsinghua University, ModelBest, or AI9Stars.
+"PilotDeck" and the names of the upstream organizations are used only to
+describe the origin of this work; no trademark rights are granted by the
+AGPL beyond the rights necessary to describe that origin.
+
+This fork contains modifications to the upstream codebase, including but not
+limited to: remote-sensing tools and services (rs-engine, open-earth-engine,
+the rs-agent plugin), desktop packaging, branding, and UI changes. The current
+modified version is dated 2026-11-19. Additional details are available in the
+repository history and in README.md.
+
+The complete corresponding source code for this version is available at:
+https://github.com/qiwenping0327/RS-Agent
+
+For binary releases, use the tag or commit that corresponds to the release
+from which the binary was obtained.
+
+Third-party components and their licenses are listed in
+THIRD-PARTY-NOTICES.md and in the LICENSES/ directory.

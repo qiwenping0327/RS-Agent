@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid">
+  <defs>
+    <linearGradient id="spbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1e3f"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="gradSpinner" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#60a5fa"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#spbg)"/>
+  <text x="600" y="70" text-anchor="middle" font-family="Segoe UI,Arial" font-size="30" fill="#fff" font-weight="700">首次启动流程</text>
+  <text x="600" y="102" text-anchor="middle" font-family="Segoe UI,Arial" font-size="16" fill="#94a3b8">应用会自动完成初始化 · 请保持联网</text>
+
+  <!-- Splash window -->
+  <g transform="translate(300 170)">
+    <rect width="600" height="380" rx="16" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+    <!-- Logo area -->
+    <g transform="translate(300 100)">
+      <circle r="54" fill="#1e40af"/>
+      <text x="0" y="8" text-anchor="middle" font-family="Segoe UI,Arial" font-size="38" fill="#fff" font-weight="800">Rs</text>
+      <text x="0" y="98" text-anchor="middle" font-family="Segoe UI,Arial" font-size="26" fill="#fff" font-weight="700">RsAgent</text>
+      <text x="0" y="126" text-anchor="middle" font-family="Segoe UI,Arial" font-size="13" fill="#93c5fd">遥感智能分析平台 · v0.0.11</text>
+    </g>
+
+    <!-- Spinner -->
+    <g transform="translate(300 300)">
+      <circle r="22" fill="none" stroke="#334155" stroke-width="3"/>
+      <circle r="22" fill="none" stroke="#3b82f6" stroke-width="3" stroke-linecap="round" stroke-dasharray="80 100">
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="1s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    <text x="300" y="334" text-anchor="middle" font-family="Segoe UI,Arial" font-size="14" fill="#cbd5e1" id="st">正在启动本地服务...</text>
+  </g>
+
+  <!-- Progress steps on the side -->
+  <g transform="translate(80 610)" font-family="Segoe UI,Arial">
+    <g>
+      <circle cx="22" cy="20" r="14" fill="#22c55e"/>
+      <path d="M16 20 L20 24 L28 14" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="52" y="25" font-size="15" fill="#e2e8f0" font-weight="600">① 解压运行时资源</text>
+      <text x="52" y="47" font-size="12" fill="#94a3b8">预计 10-30 秒</text>
+    </g>
+    <g transform="translate(0 70)">
+      <circle cx="22" cy="20" r="14" fill="#22c55e"/>
+      <path d="M16 20 L20 24 L28 14" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="52" y="25" font-size="15" fill="#e2e8f0" font-weight="600">② 检测 Python 环境</text>
+      <text x="52" y="47" font-size="12" fill="#94a3b8">自动搜索 Python 3.10+</text>
+    </g>
+    <g transform="translate(0 140)">
+      <circle cx="22" cy="20" r="14" fill="#3b82f6"/>
+      <text x="22" y="26" text-anchor="middle" font-size="14" fill="#fff" font-weight="700">3</text>
+      <text x="52" y="25" font-size="15" fill="#fff" font-weight="600">③ 安装 Python 依赖</text>
+      <text x="52" y="47" font-size="12" fill="#93c5fd">fastmcp · mcp · numpy · aiohttp</text>
+    </g>
+    <g transform="translate(0 210)">
+      <circle cx="22" cy="20" r="14" fill="none" stroke="#475569" stroke-width="2"/>
+      <text x="22" y="26" text-anchor="middle" font-size="14" fill="#475569" font-weight="700">4</text>
+      <text x="52" y="25" font-size="15" fill="#64748b">④ 启动服务 · 加载 MCP</text>
+      <text x="52" y="47" font-size="12" fill="#475569">Gateway + 8 个 MCP 工具服务器</text>
+    </g>
+    <g transform="translate(0 280)">
+      <circle cx="22" cy="20" r="14" fill="none" stroke="#475569" stroke-width="2"/>
+      <text x="22" y="26" text-anchor="middle" font-size="14" fill="#475569" font-weight="700">5</text>
+      <text x="52" y="25" font-size="15" fill="#64748b">⑤ 同步技能目录</text>
+      <text x="52" y="47" font-size="12" fill="#475569">rs-basic · rs-sar · rs-model · rs-cartography</text>
+    </g>
+  </g>
+
+  <!-- Time estimates -->
+  <g transform="translate(660 610)">
+    <rect width="460" height="210" rx="12" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+    <text x="30" y="42" font-family="Segoe UI,Arial" font-size="16" fill="#e2e8f0" font-weight="700">⏱  耗时参考</text>
+    <g font-family="Segoe UI,Arial" font-size="13">
+      <text x="30" y="82" fill="#94a3b8">首次启动（联网）</text>
+      <text x="430" y="82" text-anchor="end" fill="#60a5fa" font-weight="700">2-5 分钟</text>
+
+      <text x="30" y="112" fill="#94a3b8">首次启动（已安装依赖）</text>
+      <text x="430" y="112" text-anchor="end" fill="#4ade80" font-weight="700">30-60 秒</text>
+
+      <text x="30" y="142" fill="#94a3b8">后续启动</text>
+      <text x="430" y="142" text-anchor="end" fill="#22c55e" font-weight="700">10-20 秒</text>
+    </g>
+    <line x1="30" y1="162" x2="430" y2="162" stroke="#334155" stroke-width="1"/>
+    <text x="30" y="192" font-family="Segoe UI,Arial" font-size="12" fill="#f59e0b">⚠ 首次启动必须联网，将下载 ~200-300MB 依赖包</text>
+  </g>
+</svg>

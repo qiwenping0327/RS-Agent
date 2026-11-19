@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1e3f"/>
+      <stop offset="50%" stop-color="#133866"/>
+      <stop offset="100%" stop-color="#0a2540"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="55%" r="55%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#0b1e3f" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ndvi" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8b4513"/>
+      <stop offset="25%" stop-color="#d2b48c"/>
+      <stop offset="50%" stop-color="#f4e285"/>
+      <stop offset="75%" stop-color="#66bb6a"/>
+      <stop offset="100%" stop-color="#1b5e20"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+
+  <!-- Earth globe silhouette -->
+  <g transform="translate(1300 260)" opacity="0.25">
+    <circle r="230" fill="#1e40af"/>
+    <ellipse rx="230" ry="70" fill="none" stroke="#60a5fa" stroke-width="2" stroke-dasharray="10 8" opacity="0.55"/>
+    <ellipse rx="180" ry="220" fill="none" stroke="#60a5fa" stroke-width="2" stroke-dasharray="10 8" opacity="0.45" transform="rotate(-25)"/>
+    <ellipse rx="100" ry="220" fill="none" stroke="#60a5fa" stroke-width="2" stroke-dasharray="10 8" opacity="0.35"/>
+  </g>
+
+  <!-- Dashboard frame -->
+  <g transform="translate(180 150)">
+    <rect width="860" height="560" rx="14" fill="#0f172a" stroke="#334155" stroke-width="2"/>
+    <!-- Title bar -->
+    <rect width="860" height="44" rx="14" fill="#1e293b"/>
+    <circle cx="26" cy="22" r="7" fill="#ef4444"/>
+    <circle cx="50" cy="22" r="7" fill="#f59e0b"/>
+    <circle cx="74" cy="22" r="7" fill="#22c55e"/>
+    <text x="430" y="30" text-anchor="middle" font-family="Segoe UI,Arial" font-size="15" fill="#94a3b8" font-weight="600">RsAgent · 遥感智能分析平台</text>
+    <!-- Sidebar -->
+    <rect x="0" y="44" width="180" height="516" fill="#111827"/>
+    <g font-family="Segoe UI,Arial" font-size="13" fill="#cbd5e1">
+      <circle cx="24" cy="84" r="5" fill="#3b82f6"/>
+      <text x="40" y="89">对话</text>
+      <circle cx="24" cy="118" r="5" fill="#64748b"/>
+      <text x="40" y="123">文件</text>
+      <circle cx="24" cy="152" r="5" fill="#64748b"/>
+      <text x="40" y="157">技能</text>
+      <circle cx="24" cy="186" r="5" fill="#64748b"/>
+      <text x="40" y="191">知识库</text>
+      <circle cx="24" cy="220" r="5" fill="#64748b"/>
+      <text x="40" y="225">遥感</text>
+    </g>
+    <!-- Main content header -->
+    <rect x="180" y="44" width="680" height="52" fill="#0b1220"/>
+    <text x="208" y="78" font-family="Segoe UI,Arial" font-size="16" fill="#e2e8f0" font-weight="600">NDVI 植被指数分析 · 2024 北京</text>
+    <!-- NDVI Map -->
+    <rect x="208" y="116" width="420" height="380" rx="8" fill="url(#ndvi)"/>
+    <!-- Legend -->
+    <g transform="translate(208 508)">
+      <rect width="420" height="24" rx="4" fill="#1e293b"/>
+      <rect width="420" height="10" x="0" y="2" rx="2" fill="url(#ndvi)"/>
+      <text x="0" y="22" font-family="Segoe UI,Arial" font-size="10" fill="#94a3b8">-0.2</text>
+      <text x="210" y="22" text-anchor="middle" font-family="Segoe UI,Arial" font-size="10" fill="#94a3b8">0.3</text>
+      <text x="420" y="22" text-anchor="end" font-family="Segoe UI,Arial" font-size="10" fill="#94a3b8">0.9</text>
+    </g>
+    <!-- Right panel (stats) -->
+    <rect x="648" y="116" width="200" height="90" rx="8" fill="#1e293b"/>
+    <text x="668" y="144" font-family="Segoe UI,Arial" font-size="12" fill="#94a3b8">区域均值 NDVI</text>
+    <text x="668" y="186" font-family="Segoe UI,Arial" font-size="26" fill="#4ade80" font-weight="700">0.68</text>
+    <rect x="648" y="224" width="200" height="90" rx="8" fill="#1e293b"/>
+    <text x="668" y="252" font-family="Segoe UI,Arial" font-size="12" fill="#94a3b8">高覆盖植被</text>
+    <text x="668" y="294" font-family="Segoe UI,Arial" font-size="26" fill="#22c55e" font-weight="700">74 %</text>
+    <rect x="648" y="332" width="200" height="90" rx="8" fill="#1e293b"/>
+    <text x="668" y="360" font-family="Segoe UI,Arial" font-size="12" fill="#94a3b8">影像来源</text>
+    <text x="668" y="402" font-family="Segoe UI,Arial" font-size="22" fill="#60a5fa" font-weight="700">Sentinel-2</text>
+  </g>
+
+  <!-- Title -->
+  <text x="80" y="820" font-family="Segoe UI,Arial" font-size="44" fill="#ffffff" font-weight="800">RsAgent</text>
+  <text x="80" y="862" font-family="Segoe UI,Arial" font-size="22" fill="#93c5fd">遥感智能分析平台 · 安装与使用手册</text>
+</svg>

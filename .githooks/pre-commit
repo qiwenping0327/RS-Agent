@@ -1,0 +1,25 @@
+#!/bin/sh
+# Lightweight secret scan for staged changes.
+# Enable with: git config core.hooksPath .githooks
+#
+# This hook does not replace a full secret scanner. It blocks common API-key
+# formats (OpenAI-style sk- keys, GitHub tokens, AWS access keys, private keys)
+# before they are committed.
+
+set -u
+
+pattern='(sk-[A-Za-z0-9]{20,}|ghp_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{20,}|AKIA[0-9A-Z]{16}|-----BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY-----)'
+
+files=$(git grep --cached -l -E "$pattern" -- . 2>/dev/null || true)
+
+if [ -n "$files" ]; then
+  echo ""
+  echo "ERROR: potential secret detected in staged files:"
+  echo "$files"
+  echo ""
+  echo "Remove or redact the value, then run: git add <file>"
+  echo "To bypass this hook for a false positive: git commit --no-verify"
+  exit 1
+fi
+
+exit 0

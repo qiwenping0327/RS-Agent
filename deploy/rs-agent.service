@@ -1,0 +1,21 @@
+[Unit]
+Description=RS-Agent Remote Sensing Analysis Platform
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/rs-agent
+
+Environment=PATH=/opt/node-v22.12.0-linux-x64/bin:/usr/local/bin:/usr/bin:/bin
+
+ExecStart=/bin/bash -c "source /root/miniconda3/etc/profile.d/conda.sh && conda activate rs-agent && python /opt/rs-agent/open-earth-engine/oea_service.py & sleep 3 && node /opt/rs-agent/dist/src/cli/pilotdeck.js server & sleep 3 && node --experimental-sqlite /opt/rs-agent/ui/server/index.js"
+
+Restart=on-failure
+RestartSec=10
+
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#dbeafe"/>
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="tealGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#14b8a6"/>
+      <stop offset="100%" stop-color="#0f766e"/>
+    </linearGradient>
+    <linearGradient id="amberGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#bg2)"/>
+  <text x="600" y="70" text-anchor="middle" font-family="Segoe UI,Arial" font-size="30" fill="#0f172a" font-weight="700">产品架构</text>
+  <text x="600" y="102" text-anchor="middle" font-family="Segoe UI,Arial" font-size="16" fill="#475569">AI Agent 与遥感工具链的融合</text>
+
+  <!-- Satellite -->
+  <g transform="translate(600 210)">
+    <circle r="80" fill="#1e293b"/>
+    <path d="M0,-130 L0,-90" stroke="#475569" stroke-width="2"/>
+    <path d="M0,-90 L0,-50" stroke="#60a5fa" stroke-width="3" stroke-dasharray="6 4">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="12s" repeatCount="indefinite"/>
+    </path>
+    <rect x="-140" y="-18" width="280" height="10" rx="2" fill="#1e40af"/>
+    <rect x="-78" y="-30" width="156" height="60" rx="6" fill="#334155"/>
+    <rect x="-70" y="-22" width="140" height="44" rx="4" fill="#1e293b"/>
+    <circle r="32" fill="#2563eb" opacity="0.3"/>
+    <circle r="16" fill="#3b82f6"/>
+    <!-- Solar panels -->
+    <rect x="-140" y="-55" width="60" height="28" rx="2" fill="#0ea5e9"/>
+    <rect x="80" y="-55" width="60" height="28" rx="2" fill="#0ea5e9"/>
+    <g stroke="#1e40af" stroke-width="1" opacity="0.6">
+      <line x1="-140" y1="-40" x2="-80" y2="-40"/>
+      <line x1="-140" y1="-30" x2="-80" y2="-30"/>
+      <line x1="-120" y1="-55" x2="-120" y2="-27"/>
+      <line x1="-100" y1="-55" x2="-100" y2="-27"/>
+      <line x1="80" y1="-40" x2="140" y2="-40"/>
+      <line x1="80" y1="-30" x2="140" y2="-30"/>
+      <line x1="100" y1="-55" x2="100" y2="-27"/>
+      <line x1="120" y1="-55" x2="120" y2="-27"/>
+    </g>
+  </g>
+  <text x="600" y="336" text-anchor="middle" font-family="Segoe UI,Arial" font-size="15" fill="#334155" font-weight="600">🛰 遥感卫星影像</text>
+
+  <!-- Cloud / backend -->
+  <g transform="translate(300 510)">
+    <rect width="280" height="180" rx="14" fill="url(#blueGrad)" stroke="#1d4ed8" stroke-width="2"/>
+    <text x="140" y="40" text-anchor="middle" font-family="Segoe UI,Arial" font-size="18" fill="#fff" font-weight="700">☁ 云端处理</text>
+    <g fill="#e0f2fe" font-family="Segoe UI,Arial" font-size="14">
+      <text x="24" y="80">· 影像下载（Sentinel / Landsat）</text>
+      <text x="24" y="106">· 辐射定标 & 大气校正</text>
+      <text x="24" y="132">· 光谱指数计算</text>
+      <text x="24" y="158">· 深度学习模型推理</text>
+    </g>
+  </g>
+
+  <!-- MCP servers -->
+  <g transform="translate(640 460)">
+    <rect width="280" height="230" rx="14" fill="url(#tealGrad)" stroke="#0f766e" stroke-width="2"/>
+    <text x="140" y="40" text-anchor="middle" font-family="Segoe UI,Arial" font-size="18" fill="#fff" font-weight="700">🧰 MCP 工具链（8 服务器）</text>
+    <g fill="#ecfeff" font-family="Segoe UI,Arial" font-size="13">
+      <text x="24" y="78">· rs-agent         下载 / 预处理 / 报告</text>
+      <text x="24" y="102">· rs-analysis      时间序列 · 趋势检验</text>
+      <text x="24" y="126">· rs-index         NDVI · NDWI · EVI · NDBI</text>
+      <text x="24" y="150">· rs-inversion     地温 · 土壤水分 反演</text>
+      <text x="24" y="174">· rs-perception    分割 · 水体提取 · 分类</text>
+      <text x="24" y="198">· rs-statistics    统计 · 相关 · 异常检测</text>
+      <text x="24" y="222">· knowledge-base   知识库 + 网页搜索</text>
+    </g>
+  </g>
+
+  <!-- Desktop App -->
+  <g transform="translate(120 740)">
+    <rect width="340" height="140" rx="14" fill="#0f172a" stroke="#334155" stroke-width="2"/>
+    <rect width="340" height="32" rx="14" fill="#1e293b"/>
+    <circle cx="20" cy="16" r="5" fill="#ef4444"/>
+    <circle cx="40" cy="16" r="5" fill="#f59e0b"/>
+    <circle cx="60" cy="16" r="5" fill="#22c55e"/>
+    <text x="170" y="22" text-anchor="middle" font-family="Segoe UI,Arial" font-size="12" fill="#94a3b8">RsAgent.exe</text>
+    <text x="170" y="76" text-anchor="middle" font-family="Segoe UI,Arial" font-size="20" fill="#60a5fa" font-weight="700">桌面应用</text>
+    <text x="170" y="104" text-anchor="middle" font-family="Segoe UI,Arial" font-size="13" fill="#cbd5e1">💬 对话 · 🛰 遥感 · 📖 知识库</text>
+    <text x="170" y="126" text-anchor="middle" font-family="Segoe UI,Arial" font-size="13" fill="#94a3b8">✨ 技能 · 🔧 工具 · 📁 文件</text>
+  </g>
+
+  <!-- AI Brain -->
+  <g transform="translate(760 740)">
+    <rect width="340" height="140" rx="14" fill="url(#amberGrad)" stroke="#b45309" stroke-width="2"/>
+    <text x="170" y="50" text-anchor="middle" font-family="Segoe UI,Arial" font-size="22" fill="#fff" font-weight="700">🧠 大语言模型</text>
+    <text x="170" y="86" text-anchor="middle" font-family="Segoe UI,Arial" font-size="13" fill="#fef3c7">理解自然语言 → 编排工具链 → 返回专业结果</text>
+    <text x="170" y="108" text-anchor="middle" font-family="Segoe UI,Arial" font-size="12" fill="#fde68a">DeepSeek / 通义 / GLM / Moonshot / OpenAI …</text>
+    <text x="170" y="128" text-anchor="middle" font-family="Segoe UI,Arial" font-size="12" fill="#fde68a">OpenAI 兼容 API</text>
+  </g>
+
+  <!-- Arrows / lines -->
+  <g stroke="#334155" stroke-width="2" fill="none" marker-end="url(#arr)">
+    <defs>
+      <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+        <path d="M0,0 L10,5 L0,10 z" fill="#334155"/>
+      </marker>
+    </defs>
+    <path d="M 600 295 C 540 360, 440 380, 440 510"/>
+    <path d="M 600 295 C 680 360, 780 380, 780 460"/>
+    <path d="M 440 690 C 400 710, 340 720, 290 740"/>
+    <path d="M 780 690 L 780 740"/>
+  </g>
+  <g font-family="Segoe UI,Arial" font-size="12" fill="#334155">
+    <text x="395" y="400" transform="rotate(-25 395 400)">数据流</text>
+    <text x="795" y="400" transform="rotate(20 795 400)">工具调用</text>
+  </g>
+</svg>

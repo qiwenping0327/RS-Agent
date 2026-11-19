@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid">
+  <defs>
+    <linearGradient id="cBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0b1220"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="ndvi2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8b4513"/>
+      <stop offset="20%" stop-color="#d2b48c"/>
+      <stop offset="40%" stop-color="#f4e285"/>
+      <stop offset="60%" stop-color="#9ccc65"/>
+      <stop offset="80%" stop-color="#43a047"/>
+      <stop offset="100%" stop-color="#1b5e20"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#cBg)"/>
+  <text x="800" y="60" text-anchor="middle" font-family="Segoe UI,Arial" font-size="26" fill="#fff" font-weight="700">对话与遥感分析</text>
+  <text x="800" y="90" text-anchor="middle" font-family="Segoe UI,Arial" font-size="14" fill="#94a3b8">自然语言驱动全流程遥感分析</text>
+
+  <!-- Window -->
+  <g transform="translate(100 130)">
+    <rect width="1400" height="720" rx="12" fill="#0f172a" stroke="#334155" stroke-width="2"/>
+    <!-- Header -->
+    <rect width="1400" height="36" rx="12" fill="#1e293b"/>
+    <circle cx="20" cy="18" r="6" fill="#ef4444"/>
+    <circle cx="40" cy="18" r="6" fill="#f59e0b"/>
+    <circle cx="60" cy="18" r="6" fill="#22c55e"/>
+    <text x="700" y="24" text-anchor="middle" font-family="Segoe UI,Arial" font-size="13" fill="#94a3b8">NDVI 植被指数分析会话 · RsAgent</text>
+
+    <!-- Sidebar (smaller for wide layout) -->
+    <rect x="0" y="36" width="200" height="684" fill="#111827"/>
+    <g font-family="Segoe UI,Arial" font-size="12" fill="#cbd5e1" transform="translate(16 70)">
+      <rect x="0" y="-30" width="168" height="28" rx="6" fill="#2563eb" opacity="0.2"/>
+      <text x="14" y="-12" fill="#60a5fa" font-weight="600">NDVI 植被指数</text>
+      <text x="4" y="16" fill="#94a3b8">● 水体提取 · 长江</text>
+      <text x="4" y="44" fill="#94a3b8">○ 城市扩张检测</text>
+      <text x="4" y="72" fill="#94a3b8">○ SAR 海面观测</text>
+      <text x="4" y="100" fill="#94a3b8">○ 地温反演 · 夏季</text>
+    </g>
+
+    <!-- Chat area -->
+    <!-- User message -->
+    <g transform="translate(240 70)">
+      <circle cx="20" cy="22" r="15" fill="#f59e0b"/>
+      <text x="20" y="27" text-anchor="middle" font-family="Segoe UI,Arial" font-size="11" fill="#fff" font-weight="700">你</text>
+      <rect x="50" y="0" width="780" height="46" rx="12" fill="#1e293b"/>
+      <text x="72" y="30" font-family="Segoe UI,Arial" font-size="14" fill="#e2e8f0">帮我下载北京市 2024 年 7 月的 Sentinel-2 影像，计算 NDVI，</text>
+      <text x="72" y="49" font-family="Segoe UI,Arial" font-size="14" fill="#e2e8f0">并分析植被覆盖情况，用图表展示结果。</text>
+    </g>
+
+    <!-- AI message head -->
+    <g transform="translate(240 140)">
+      <circle cx="20" cy="22" r="15" fill="#2563eb"/>
+      <text x="20" y="27" text-anchor="middle" font-family="Segoe UI,Arial" font-size="11" fill="#fff" font-weight="700">AI</text>
+      <rect x="50" y="0" width="820" height="80" rx="12" fill="#1e293b"/>
+      <text x="72" y="30" font-family="Segoe UI,Arial" font-size="14" fill="#e2e8f0" font-weight="600">好的。我已为你选择「遥感基础技能 (rs-basic)」，将执行以下流程：</text>
+      <text x="72" y="56" font-family="Segoe UI,Arial" font-size="13" fill="#94a3b8">1) 下载 Sentinel-2 L2A 影像 → 2) 预处理 + 裁剪 → 3) 计算 NDVI → 4) 统计分析 → 5) 制图输出</text>
+    </g>
+
+    <!-- Tool run box -->
+    <g transform="translate(240 240)">
+      <rect x="50" y="0" width="820" height="130" rx="12" fill="#0b1220" stroke="#334155"/>
+      <rect x="50" y="0" width="820" height="30" rx="12" fill="#1e293b"/>
+      <text x="70" y="20" font-family="Segoe UI,Arial" font-size="12" fill="#64748b">工具调用 · 共 4 步</text>
+      <text x="860" y="20" text-anchor="end" font-family="Segoe UI,Arial" font-size="11" fill="#94a3b8">第 3 / 4 步运行中</text>
+
+      <g transform="translate(70 42)" font-family="Consolas, monospace" font-size="12">
+        <rect x="0" y="0" width="780" height="22" rx="3" fill="none"/>
+        <rect x="0" y="0" width="18" height="18" rx="4" fill="#166534"/>
+        <text x="9" y="14" text-anchor="middle" fill="#fff">✓</text>
+        <text x="30" y="14" fill="#4ade80">rs_download</text>
+        <text x="180" y="14" fill="#94a3b8">S2A_MSIL2A_20240715T030551 → data/beijing/</text>
+
+        <rect x="0" y="28" width="780" height="22" rx="3" fill="none"/>
+        <rect x="0" y="28" width="18" height="18" rx="4" fill="#166534"/>
+        <text x="9" y="42" text-anchor="middle" fill="#fff">✓</text>
+        <text x="30" y="42" fill="#4ade80">rs_preprocess</text>
+        <text x="180" y="42" fill="#94a3b8">辐射校正 · 裁剪 shp/Beijing.shp</text>
+
+        <rect x="0" y="56" width="780" height="22" rx="3" fill="#0f172a" stroke="#3b82f6" stroke-dasharray="2 2"/>
+        <circle cx="9" cy="67" r="6" fill="#3b82f6">
+          <animate attributeName="r" values="5;7;5" dur="1s" repeatCount="indefinite"/>
+        </circle>
+        <text x="30" y="70" fill="#60a5fa" font-weight="700">rs_analyze</text>
+        <text x="180" y="70" fill="#cbd5e1">Compute NDVI from B04/B08 bands</text>
+
+        <rect x="0" y="84" width="780" height="22" rx="3" fill="none"/>
+        <circle cx="9" cy="95" r="5.5" fill="none" stroke="#334155" stroke-width="1.5"/>
+        <text x="30" y="98" fill="#64748b">rs_statistics</text>
+        <text x="180" y="98" fill="#475569">（待执行）统计 + 制图</text>
+      </g>
+    </g>
+
+    <!-- Result panel with NDVI map and stats -->
+    <g transform="translate(240 392)">
+      <rect x="50" y="0" width="820" height="290" rx="12" fill="#1e293b" stroke="#334155"/>
+      <text x="70" y="30" font-family="Segoe UI,Arial" font-size="14" fill="#e2e8f0" font-weight="700">📊 步骤 4 · 结果预览</text>
+
+      <!-- NDVI Map -->
+      <rect x="70" y="50" width="460" height="210" rx="6" fill="url(#ndvi2)"/>
+      <!-- Simulated urban footprint -->
+      <path d="M 180 180 Q 260 120 340 190 Q 410 250 490 200" stroke="#a67c52" stroke-width="14" fill="none" opacity="0.7"/>
+      <circle cx="300" cy="155" r="40" fill="#8b4513" opacity="0.35"/>
+      <circle cx="420" cy="190" r="22" fill="#8b4513" opacity="0.35"/>
+      <!-- Water mask -->
+      <path d="M 120 80 Q 190 70 260 100 Q 210 150 130 130 Z" fill="#1e40af" opacity="0.55"/>
+      <text x="300" y="278" text-anchor="middle" font-family="Segoe UI,Arial" font-size="12" fill="#93c5fd">NDVI 植被指数图 · 北京（2024-07-15）</text>
+
+      <!-- Legend bar -->
+      <g transform="translate(70 270)">
+        <rect width="460" height="10" rx="2" fill="url(#ndvi2)"/>
+        <text x="0" y="28" font-family="Segoe UI,Arial" font-size="10" fill="#94a3b8">-0.2</text>
+        <text x="230" y="28" text-anchor="middle" font-family="Segoe UI,Arial" font-size="10" fill="#94a3b8">0.35</text>
+        <text x="460" y="28" text-anchor="end" font-family="Segoe UI,Arial" font-size="10" fill="#94a3b8">0.92</text>
+      </g>
+
+      <!-- Stats side panel -->
+      <g transform="translate(558 50)">
+        <rect width="290" height="90" rx="6" fill="#0f172a"/>
+        <text x="16" y="28" font-family="Segoe UI,Arial" font-size="12" fill="#94a3b8">区域均值 NDVI</text>
+        <text x="16" y="64" font-family="Segoe UI,Arial" font-size="28" fill="#4ade80" font-weight="800">0.682</text>
+
+        <rect x="0" y="104" width="290" height="90" rx="6" fill="#0f172a"/>
+        <text x="16" y="132" font-family="Segoe UI,Arial" font-size="12" fill="#94a3b8">植被覆盖分布（%）</text>
+        <!-- Mini bar chart -->
+        <g transform="translate(16 148)">
+          <rect x="0" y="0" width="30" height="36" rx="2" fill="#ef4444"/>
+          <text x="15" y="-4" text-anchor="middle" font-size="10" fill="#64748b">低</text>
+          <text x="15" y="48" text-anchor="middle" font-size="10" fill="#94a3b8">14%</text>
+          <rect x="54" y="-8" width="30" height="44" rx="2" fill="#f59e0b"/>
+          <text x="69" y="-12" text-anchor="middle" font-size="10" fill="#64748b">中低</text>
+          <text x="69" y="48" text-anchor="middle" font-size="10" fill="#94a3b8">22%</text>
+          <rect x="108" y="-18" width="30" height="54" rx="2" fill="#facc15"/>
+          <text x="123" y="-22" text-anchor="middle" font-size="10" fill="#64748b">中</text>
+          <text x="123" y="48" text-anchor="middle" font-size="10" fill="#94a3b8">28%</text>
+          <rect x="162" y="-28" width="30" height="64" rx="2" fill="#4ade80"/>
+          <text x="177" y="-32" text-anchor="middle" font-size="10" fill="#64748b">高</text>
+          <text x="177" y="48" text-anchor="middle" font-size="10" fill="#94a3b8">36%</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Composer -->
+    <g transform="translate(240 666)">
+      <rect x="0" y="0" width="832" height="44" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+      <text x="16" y="28" font-family="Segoe UI,Arial" font-size="13" fill="#64748b">生成详细 PDF 报告并下载结果文件...</text>
+      <rect x="744" y="6" width="72" height="32" rx="8" fill="#2563eb"/>
+      <text x="780" y="27" text-anchor="middle" font-family="Segoe UI,Arial" font-size="13" fill="#fff" font-weight="600">发送</text>
+    </g>
+  </g>
+</svg>

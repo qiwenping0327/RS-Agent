@@ -1,0 +1,55 @@
+# 遥感智能分析 Agent - Docker Compose 配置
+#
+# 启动方式:
+#   docker compose -f docker-compose.rs.yml up -d
+#
+# 服务:
+#   rs-engine-mcp    - MCP Server (由 RsAgent 管理，不需要单独启动)
+#   rs-engine-hooks  - Hook HTTP 服务 (端口 8000)
+
+version: "3.8"
+
+services:
+  # Hook HTTP 服务 - 独立运行，接收 RsAgent Hook 回调
+  rs-engine-hooks:
+    build:
+      context: .
+      dockerfile: Dockerfile.rs
+    command: python -m rs_engine.hook_server
+    ports:
+      - "${RS_HOOK_PORT:-8000}:8000"
+    volumes:
+      - rs-workspace:/workspace
+      - rs-models:/opt/rs-engine/models
+    environment:
+      - RS_ENGINE_HOME=/opt/rs-engine
+      - RS_WORKSPACE=/workspace
+      - RS_HOOK_PORT=8000
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  # MCP Server - 由 RsAgent 通过 mcpServers.command 启动，此处仅用于测试
+  rs-engine-mcp:
+    build:
+      context: .
+      dockerfile: Dockerfile.rs
+    command: python -m rs_engine.mcp_server
+    volumes:
+      - rs-workspace:/workspace
+      - rs-models:/opt/rs-engine/models
+    environment:
+      - RS_ENGINE_HOME=/opt/rs-engine
+      - RS_WORKSPACE=/workspace
+    stdin_open: true
+    profiles:
+      - testing
+
+volumes:
+  rs-workspace:
+    driver: local
+  rs-models:
+    driver: local

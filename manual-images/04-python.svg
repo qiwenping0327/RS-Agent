@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid">
+  <defs>
+    <linearGradient id="pybg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ecfdf5"/>
+      <stop offset="100%" stop-color="#dbeafe"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#pybg)"/>
+  <text x="600" y="70" text-anchor="middle" font-family="Segoe UI,Arial" font-size="30" fill="#0f172a" font-weight="700">Python 环境配置</text>
+  <text x="600" y="102" text-anchor="middle" font-family="Segoe UI,Arial" font-size="16" fill="#475569">RsAgent 需要 Python 3.10 或更高版本</text>
+
+  <!-- Python Logo -->
+  <g transform="translate(180 200)">
+    <!-- Blue part -->
+    <path d="M0 40 L0 0 L140 0 L140 40 L80 40 L80 80 L140 80 L140 160 L70 160 Q0 160 0 90 Z" fill="#3776ab"/>
+    <!-- Yellow part -->
+    <path d="M140 120 L140 160 L280 160 L280 120 L220 120 L220 80 L160 80 L160 0 L210 0 Q280 0 280 70 Z" fill="#ffd43b"/>
+    <circle cx="50" cy="40" r="12" fill="#ffd43b"/>
+    <circle cx="230" cy="120" r="12" fill="#3776ab"/>
+  </g>
+  <text x="320" y="210" font-family="Segoe UI,Arial" font-size="36" fill="#0f172a" font-weight="800">Python</text>
+  <text x="320" y="248" font-family="Segoe UI,Arial" font-size="18" fill="#3776ab" font-weight="700">3.12  ✓ 推荐</text>
+  <text x="320" y="276" font-family="Segoe UI,Arial" font-size="14" fill="#22c55e" font-weight="600">兼容所有 MCP 工具</text>
+
+  <!-- pip install panel -->
+  <g transform="translate(560 180)">
+    <rect width="540" height="300" rx="12" fill="#0f172a"/>
+    <rect width="540" height="34" rx="12" fill="#1e293b"/>
+    <circle cx="18" cy="17" r="6" fill="#ef4444"/>
+    <circle cx="40" cy="17" r="6" fill="#f59e0b"/>
+    <circle cx="62" cy="17" r="6" fill="#22c55e"/>
+    <text x="270" y="23" text-anchor="middle" font-family="Consolas, monospace" font-size="12" fill="#94a3b8">命令提示符 · pip install</text>
+
+    <g font-family="Consolas, monospace" font-size="13">
+      <text x="20" y="72" fill="#22c55e">C:\Users\You&gt;</text>
+      <text x="150" y="72" fill="#e2e8f0">python --version</text>
+      <text x="20" y="96" fill="#60a5fa"># </text>
+      <text x="36" y="96" fill="#e2e8f0">Python 3.12.4</text>
+
+      <text x="20" y="132" fill="#22c55e">C:\Users\You&gt;</text>
+      <text x="150" y="132" fill="#e2e8f0">python -m pip install fastmcp mcp numpy aiohttp</text>
+
+      <text x="20" y="162" fill="#94a3b8">Collecting fastmcp</text>
+      <text x="20" y="182" fill="#94a3b8">  Downloading fastmcp-3.4.4-py3-none-any.whl (1.2 MB)</text>
+      <text x="20" y="202" fill="#94a3b8">Collecting mcp, numpy, aiohttp...</text>
+      <text x="20" y="222" fill="#22c55e">✓ Successfully installed 14 packages</text>
+      <text x="20" y="242" fill="#94a3b8">█</text>
+      <rect x="20" y="236" width="10" height="14" fill="#cbd5e1">
+        <animate attributeName="opacity" values="0;1;0" dur="1s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+  </g>
+
+  <!-- Step cards -->
+  <g transform="translate(120 560)">
+    <rect width="270" height="200" rx="12" fill="#fff" stroke="#2563eb" stroke-width="2"/>
+    <circle cx="36" cy="44" r="18" fill="#2563eb"/>
+    <text x="36" y="50" text-anchor="middle" font-family="Segoe UI,Arial" font-size="18" fill="#fff" font-weight="700">1</text>
+    <text x="70" y="50" font-family="Segoe UI,Arial" font-size="17" fill="#0f172a" font-weight="700">安装 Python</text>
+    <g font-family="Segoe UI,Arial" font-size="13" fill="#475569">
+      <text x="24" y="94">• 从 python.org 下载 3.12</text>
+      <text x="24" y="118">• 安装时勾选 Add to PATH</text>
+      <text x="24" y="142">• 默认路径即可</text>
+    </g>
+    <text x="24" y="180" font-family="Segoe UI,Arial" font-size="12" fill="#2563eb">约 5 分钟完成</text>
+  </g>
+
+  <g transform="translate(465 560)">
+    <rect width="270" height="200" rx="12" fill="#fff" stroke="#0f766e" stroke-width="2"/>
+    <circle cx="36" cy="44" r="18" fill="#0f766e"/>
+    <text x="36" y="50" text-anchor="middle" font-family="Segoe UI,Arial" font-size="18" fill="#fff" font-weight="700">2</text>
+    <text x="70" y="50" font-family="Segoe UI,Arial" font-size="17" fill="#0f172a" font-weight="700">安装依赖包</text>
+    <g font-family="Segoe UI,Arial" font-size="13" fill="#475569">
+      <text x="24" y="94">• pip install fastmcp</text>
+      <text x="24" y="118">• pip install mcp numpy aiohttp</text>
+      <text x="24" y="142">• 应用启动时自动执行</text>
+    </g>
+    <text x="24" y="180" font-family="Segoe UI,Arial" font-size="12" fill="#0f766e">首次启动自动安装</text>
+  </g>
+
+  <g transform="translate(810 560)">
+    <rect width="270" height="200" rx="12" fill="#fff" stroke="#b45309" stroke-width="2"/>
+    <circle cx="36" cy="44" r="18" fill="#b45309"/>
+    <text x="36" y="50" text-anchor="middle" font-family="Segoe UI,Arial" font-size="18" fill="#fff" font-weight="700">3</text>
+    <text x="70" y="50" font-family="Segoe UI,Arial" font-size="17" fill="#0f172a" font-weight="700">配置模型 API</text>
+    <g font-family="Segoe UI,Arial" font-size="13" fill="#475569">
+      <text x="24" y="94">• 设置大模型 API Key</text>
+      <text x="24" y="118">• 配置模型名称与地址</text>
+      <text x="24" y="142">• 兼容 OpenAI 格式</text>
+    </g>
+    <text x="24" y="180" font-family="Segoe UI,Arial" font-size="12" fill="#b45309">首次启动弹窗引导配置</text>
+  </g>
+</svg>

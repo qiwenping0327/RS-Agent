@@ -1,0 +1,104 @@
+appId: cc.rsagent.desktop
+productName: RsAgent
+copyright: "Copyright © 2026 RsAgent Contributors. AGPL-3.0-only. Based on PilotDeck (Copyright © 2026 the PilotDeck project authors and contributors)."
+
+directories:
+  output: dist-build
+  buildResources: resources
+
+# publish:
+#   provider: github
+#   owner: qiwenping0327
+#   repo: RS-Agent
+
+mac:
+  category: public.app-category.developer-tools
+  target:
+    - target: dmg
+      arch: arm64
+  icon: resources/icon.icns
+  hardenedRuntime: true
+  gatekeeperAssess: false
+  entitlements: resources/entitlements.mac.plist
+  entitlementsInherit: resources/entitlements.mac.plist
+  minimumSystemVersion: "12.0"
+  darkModeSupport: true
+  # Without these *UsageDescription strings, macOS TCC popups appear with an
+  # empty body — users see a generic "RsAgent 想要访问 ..." prompt and have
+  # no idea why, which is half of the "陆陆续续蹦出来权限请求窗口" complaint.
+  # Each string is what shows up in the system dialog AND in
+  # System Settings → Privacy & Security → <category> → RsAgent.
+  extendInfo:
+    NSDocumentsFolderUsageDescription: >-
+      RsAgent 需要访问"文稿"目录以便加载和保存你授权的 workspace 项目内容。
+    NSDownloadsFolderUsageDescription: >-
+      RsAgent 需要访问"下载"目录以便处理你拖入对话窗口的附件。
+    NSDesktopFolderUsageDescription: >-
+      RsAgent 需要访问"桌面"目录以便加载放在桌面上的 workspace 项目内容。
+    NSRemovableVolumesUsageDescription: >-
+      RsAgent 需要访问可移除磁盘上的 workspace 项目内容。
+    NSAppleEventsUsageDescription: >-
+      RsAgent 在使用浏览器自动化技能时需要控制 Google Chrome / Chromium 实例。
+    NSCameraUsageDescription: >-
+      RsAgent 不主动使用摄像头；当用户授权的 plugin/MCP 调用涉及摄像头时才会请求。
+    NSMicrophoneUsageDescription: >-
+      RsAgent 不主动使用麦克风；当用户授权的 plugin/MCP 调用涉及麦克风时才会请求。
+
+dmg:
+  sign: true
+  artifactName: "RsAgent-${version}-arm64.dmg"
+  contents:
+    - x: 130
+      y: 220
+    - x: 410
+      y: 220
+      type: link
+      path: /Applications
+
+win:
+  target:
+    - nsis
+  icon: resources/icon.ico
+  artifactName: "RsAgent-${version}-win-${arch}.exe"
+
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: "RsAgent"
+
+extraResources:
+  - from: ../../LICENSE
+    to: LICENSE
+  - from: ../../NOTICE
+    to: NOTICE
+  - from: ../../THIRD-PARTY-NOTICES.md
+    to: THIRD-PARTY-NOTICES.md
+  - from: ../../LICENSES/
+    to: LICENSES/
+  - from: resources/node-bin/
+    to: node-bin/
+  - from: resources/bun-bin/
+    to: bun-bin/
+  - from: resources/rsagentui-bundle.tar
+    to: rsagentui-bundle.tar
+  - from: resources/rsagent-main-bundle.tar
+    to: rsagent-main-bundle.tar
+  - from: resources/rsagent-memory-core-bundle.tar
+    to: rsagent-memory-core-bundle.tar
+  - from: resources/rs-engine-bundle.tar
+    to: rs-engine-bundle.tar
+  - from: resources/products-bundle.tar
+    to: products-bundle.tar
+  - from: resources/open-earth-engine-bundle.tar
+    to: open-earth-engine-bundle.tar
+
+files:
+  - "dist/**/*"
+  - "onboarding/**/*"
+  - "splash/**/*"
+  - "assets/**/*"
+  - "node_modules/**/*"
+  - "package.json"
