@@ -1,7 +1,7 @@
-<h1 align="center">RsAgent</h1>
+<h1 align="center">Guanjing · RS-Agent</h1>
 
 <p align="center">
-  Task-oriented AI Agent productivity platform — an independent fork of PilotDeck with remote-sensing capabilities.
+  <b>Remote Sensing Agent</b> — a task-oriented AI Agent productivity platform, and an independent fork of PilotDeck with remote-sensing capabilities.
 </p>
 
 <p align="center">
@@ -18,7 +18,7 @@
 
 ---
 
-> **RsAgent is an independent fork of [PilotDeck](https://github.com/OpenBMB/PilotDeck).**
+> **Guanjing · RS-Agent is an independent fork of [PilotDeck](https://github.com/OpenBMB/PilotDeck).**
 > It is licensed under AGPL-3.0. The upstream project is jointly developed by
 > Tsinghua University THUNLP, ModelBest, OpenBMB, and AI9Stars; this fork is
 > maintained by RsAgent Contributors and is **not** endorsed by the upstream
@@ -27,9 +27,9 @@
 
 ---
 
-## 💡 About RsAgent
+## 💡 About Guanjing · RS-Agent
 
-**RsAgent** is a modified fork of [PilotDeck](https://github.com/OpenBMB/PilotDeck), an open-source agent operating system designed around the concept of "WorkSpace". The upstream project is jointly developed by Tsinghua University [THUNLP](https://nlp.csai.tsinghua.edu.cn/), [ModelBest](https://modelbest.cn/), [OpenBMB](https://www.openbmb.cn/), and [AI9Stars](https://github.com/AI9Stars). This fork keeps the WorkSpace-centered architecture and adds remote-sensing capabilities (rs-engine, open-earth-engine, and the rs-agent plugin) plus desktop packaging. It is maintained by RsAgent Contributors and is not endorsed by the upstream project.
+**Guanjing · RS-Agent** is a modified fork of [PilotDeck](https://github.com/OpenBMB/PilotDeck), an open-source agent operating system designed around the concept of "WorkSpace". The upstream project is jointly developed by Tsinghua University [THUNLP](https://nlp.csai.tsinghua.edu.cn/), [ModelBest](https://modelbest.cn/), [OpenBMB](https://www.openbmb.cn/), and [AI9Stars](https://github.com/AI9Stars). This fork keeps the WorkSpace-centered architecture and adds remote-sensing capabilities (rs-engine, open-earth-engine, and the rs-agent plugin) plus desktop packaging. It is maintained by RsAgent Contributors and is not endorsed by the upstream project.
 
 A wave of excellent AI Agent harnesses has emerged in recent years, each with its own focus: **Claude Code / Cursor / Trae Solo** brought model reasoning deep into the programming IDE; **Claude Cowork** introduced the notion of project-level isolation to desktop-side knowledge work; **WorkBuddy** connected agents to IM ecosystems such as WeCom and Feishu so AI is one message away.
 
@@ -40,7 +40,7 @@ When we shift the lens from "one-shot programming" or "immediate Q&A" to **long-
 - Can tasks of different difficulty **automatically be matched to different models**, instead of burning the flagship model on trivial calls?
 - When you step away from the keyboard, can the work keep moving? Can the agent **proactively discover what's worth doing, report progress, and land results as files on disk**?
 
-RsAgent is an incremental exploration around exactly these questions. It uses the WorkSpace as the fundamental unit — completely isolating files, memory and skills per project — and pairs it with three pillar capabilities: **White-box Memory**, **Smart Routing** and **Always-on**. The entire system natively supports the [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) and behaves consistently across front-ends (Web / CLI / IM).
+Guanjing · RS-Agent is an incremental exploration around exactly these questions. It uses the WorkSpace as the fundamental unit — completely isolating files, memory and skills per project — and pairs it with three pillar capabilities: **White-box Memory**, **Smart Routing** and **Always-on**. The entire system natively supports the [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) and behaves consistently across front-ends (Web / CLI / IM).
 
 ### ✨ Key Highlights
 
@@ -85,7 +85,7 @@ Task difficulty is auto-detected; complex calls go to flagship models (e.g. Clau
 
 **Always-on Background Execution**
 
-RsAgent breaks the "you ask, it answers" loop: after you sign off, the agent keeps discovering candidate tasks, running long-horizon monitors, and finally lands deliverables as local files with a summary report waiting for you.
+RS-Agent breaks the "you ask, it answers" loop: after you sign off, the agent keeps discovering candidate tasks, running long-horizon monitors, and finally lands deliverables as local files with a summary report waiting for you.
 
 <p align="center">
   <img src="assets/awo_en.gif" width="100%" alt="Always-on execution demo"/>
@@ -165,14 +165,14 @@ The research team benchmarked 7 complex tasks (multilingual podcast push, multi-
 
 #### 3. White-box Memory — layout & tone never bleed across projects
 
-In black-box agents, mixing tasks in a shared context pool inevitably pollutes memory. RsAgent's WorkSpace-scoped white-box memory addresses this end-to-end:
+In black-box agents, mixing tasks in a shared context pool inevitably pollutes memory. RS-Agent's WorkSpace-scoped white-box memory addresses this end-to-end:
 
 <table width="100%">
 <thead>
 <tr>
   <th width="14%" align="left">Dimension</th>
   <th width="41%" align="left">Current AI Agents (black-box)</th>
-  <th width="45%" align="left">RsAgent (white-box)</th>
+  <th width="45%" align="left">RS-Agent (white-box)</th>
 </tr>
 </thead>
 <tbody>
@@ -208,11 +208,11 @@ In black-box agents, mixing tasks in a shared context pool inevitably pollutes m
 
 ## 🖥️ UI & Demo
 
-RsAgent ships an out-of-the-box Web UI with full WorkSpace management, white-box memory editing, and visualization of multi-agent collaboration.
+RS-Agent ships an out-of-the-box Web UI with full WorkSpace management, white-box memory editing, and visualization of multi-agent collaboration.
 
 ### Use Cases
 
-> All demos below are generated entirely by edge-side models via RsAgent's Smart Routing — no cloud-side frontier model required.
+> All demos below are generated entirely by edge-side models via RS-Agent's Smart Routing — no cloud-side frontier model required.
 
 #### Work Document Generation
 
@@ -284,7 +284,7 @@ https://github.com/user-attachments/assets/a7245467-ee3c-4939-a055-c56576ac56d1
 
 ### Option A: Desktop app (recommended)
 
-Download the latest RsAgent desktop build from the
+Download the latest RS-Agent desktop build from the
 [Releases page](https://github.com/qiwenping0327/RS-Agent/releases).
 
 ### Option B: From source (for developers)
@@ -304,7 +304,7 @@ cd ..
 ```
 
 > The server/CLI entry point is still named `pilotdeck` for compatibility with
-> the upstream project. It is part of RsAgent, not the upstream distribution.
+> the upstream project. It is part of RS-Agent, not the upstream distribution.
 
 **Desktop build runtime binaries (not committed to Git)**
 
@@ -329,7 +329,7 @@ The corresponding license texts are in `LICENSES/Node.js-LICENSE.txt` and
 
 **2. Configure a model provider**
 
-RsAgent reads `~/.pilotdeck/pilotdeck.yaml` (the path is kept for compatibility with the upstream project). You can create it manually, let the bootstrap script generate one, **or just open the Web UI and configure providers visually in the settings panel.**
+RS-Agent reads `~/.pilotdeck/pilotdeck.yaml` (the path is kept for compatibility with the upstream project). You can create it manually, let the bootstrap script generate one, **or just open the Web UI and configure providers visually in the settings panel.**
 Supported protocols include OpenAI, Anthropic, DeepSeek, Qwen, Kimi, MiniMax and other OpenAI-compatible endpoints.
 
 ```yaml
@@ -354,7 +354,7 @@ cd ui && npm run start   # production mode, visit http://localhost:3001
 
 ### Option C: Docker Compose
 
-If Docker is installed, you can start RsAgent with:
+If Docker is installed, you can start RS-Agent with:
 
 ```bash
 docker compose up -d
@@ -364,7 +364,7 @@ docker compose up -d
 
 ## 🛠️ Extension Protocol
 
-RsAgent inherits PilotDeck's open plugin architecture, with a strict boundary between the open-source core and plugin customization. Extending the system is a `plugin.json` away:
+RS-Agent inherits PilotDeck's open plugin architecture, with a strict boundary between the open-source core and plugin customization. Extending the system is a `plugin.json` away:
 
 - **MCP Servers** — first-class integration with any Model Context Protocol server.
 - **Tools & Skills** — register custom tools, or pull community skills via [ClawHub](https://www.npmjs.com/package/clawhub).
@@ -428,7 +428,7 @@ The upstream PilotDeck project builds upon the following outstanding open-source
 
 ## 🏢 Upstream Project
 
-RsAgent is based on PilotDeck. The upstream project is jointly developed by
+RS-Agent is based on PilotDeck. The upstream project is jointly developed by
 Tsinghua University [THUNLP](https://nlp.csai.tsinghua.edu.cn/),
 [ModelBest](https://modelbest.cn/), [OpenBMB](https://www.openbmb.cn/) and
 [AI9Stars](https://github.com/AI9Stars). RsAgent Contributors are independent
@@ -477,7 +477,7 @@ version/tag. This satisfies the corresponding-source requirement of AGPL-3.0.
 
 ## 📄 License
 
-RsAgent is a modified version of PilotDeck and is licensed under the
+RS-Agent is a modified version of PilotDeck and is licensed under the
 [GNU Affero General Public License v3.0](LICENSE) (AGPL-3.0-only). See
 [NOTICE](NOTICE) and [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md) for
 attribution, the modification statement, and third-party licenses.

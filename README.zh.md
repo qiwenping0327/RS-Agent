@@ -1,4 +1,4 @@
-<h1 align="center">RsAgent</h1>
+<h1 align="center">观境 · 遥感智能体（RS-Agent）</h1>
 
 <p align="center">
   面向任务制的 AI Agent 生产力平台 —— 基于 PilotDeck 二次开发，并加入遥感能力。
@@ -18,7 +18,7 @@
 
 ---
 
-> **RsAgent 是 [PilotDeck](https://github.com/OpenBMB/PilotDeck) 的独立二次开发分支。**
+> **观境 RS-Agent 是 [PilotDeck](https://github.com/OpenBMB/PilotDeck) 的独立二次开发分支。**
 > 本项目遵循 AGPL-3.0。上游项目由清华大学 THUNLP 实验室、面壁智能、OpenBMB
 > 与 AI9Stars 联合研发；本分支由 RsAgent Contributors 维护，**未获得**上游项目
 > 或上述机构的背书。详见 [NOTICE](NOTICE) 与
@@ -26,9 +26,9 @@
 
 ---
 
-## 💡 关于 RsAgent
+## 💡 关于观境 RS-Agent
 
-**RsAgent** 是 [PilotDeck](https://github.com/OpenBMB/PilotDeck) 的二次开发版本。PilotDeck 是一个以「WorkSpace（工作舱）」为核心设计的开源智能体操作系统，由清华大学 [THUNLP](https://nlp.csai.tsinghua.edu.cn/) 实验室、[面壁智能](https://modelbest.cn/)、[OpenBMB](https://www.openbmb.cn/) 与 [AI9Stars](https://github.com/AI9Stars) 联合研发并开源。本分支保留其 WorkSpace 架构，并增加遥感能力（rs-engine、open-earth-engine、rs-agent 插件）与桌面端打包。本项目由 RsAgent Contributors 维护，未获得上游项目背书。
+**观境 RS-Agent** 是 [PilotDeck](https://github.com/OpenBMB/PilotDeck) 的二次开发版本。PilotDeck 是一个以「WorkSpace（工作舱）」为核心设计的开源智能体操作系统，由清华大学 [THUNLP](https://nlp.csai.tsinghua.edu.cn/) 实验室、[面壁智能](https://modelbest.cn/)、[OpenBMB](https://www.openbmb.cn/) 与 [AI9Stars](https://github.com/AI9Stars) 联合研发并开源。本分支保留其 WorkSpace 架构，并增加遥感能力（rs-engine、open-earth-engine、rs-agent 插件）与桌面端打包。本项目由 RsAgent Contributors 维护，未获得上游项目背书。
 
 当前 AI Agent Harness 领域已涌现出一批优秀的代表成果，各有侧重：**Claude Code / Cursor / Trae Solo** 把模型的推理能力深度集成进了编程 IDE；**Claude Cowork** 引入了项目隔离的概念，把 Agent 带到了桌面端的知识工作场景；**WorkBuddy** 打通了 IM 生态，让 AI 在企微 / 飞书等通讯工具中触手可及。
 
@@ -39,7 +39,7 @@
 - 不同难度的任务，能否 **自动匹配不同模型**？而不是简单任务也跑最贵的旗舰模型？
 - 人离开电脑后，活能否继续推进？Agent 能否 **主动发现值得做的事、汇报进展、把成果落地为文件**？
 
-RsAgent 正是围绕这些问题做的增量探索。它以 WorkSpace 为基本单位，将文件、记忆、技能在项目级别完整隔离与沉淀，并配套提供 **白盒记忆**、**智能路由**、**Always-on** 三大能力，整套系统原生支持 [Model Context Protocol (MCP)](https://modelcontextprotocol.io/)，跨前端（Web / CLI / IM）行为一致。
+观境 RS-Agent 正是围绕这些问题做的增量探索。它以 WorkSpace 为基本单位，将文件、记忆、技能在项目级别完整隔离与沉淀，并配套提供 **白盒记忆**、**智能路由**、**Always-on** 三大能力，整套系统原生支持 [Model Context Protocol (MCP)](https://modelcontextprotocol.io/)，跨前端（Web / CLI / IM）行为一致。
 
 ### ✨ 核心亮点
 
@@ -96,7 +96,7 @@ RsAgent 正是围绕这些问题做的增量探索。它以 WorkSpace 为基本�
 
 ### 📊 核心能力实测数据
 
-RsAgent 的三大核心能力在实际生产环境中展现出了显著的优势：
+观境 RS-Agent 的三大核心能力在实际生产环境中展现出了显著的优势：
 
 #### 1. 智能路由：社媒场景节省 ～70% 成本
 
@@ -164,14 +164,14 @@ RsAgent 的三大核心能力在实际生产环境中展现出了显著的优势
 
 #### 3. 白盒记忆：排版与文风不再"串台"
 
-在传统的黑盒 Agent 中，多任务混居会导致记忆全局污染。RsAgent 通过 WorkSpace 实现了记忆的白盒化管理：
+在传统的黑盒 Agent 中，多任务混居会导致记忆全局污染。观境 RS-Agent 通过 WorkSpace 实现了记忆的白盒化管理：
 
 <table width="100%">
 <thead>
 <tr>
   <th width="14%" align="left">维度</th>
   <th width="41%" align="left">现有 AI Agent（黑盒）</th>
-  <th width="45%" align="left">RsAgent（白盒）</th>
+  <th width="45%" align="left">观境 RS-Agent（白盒）</th>
 </tr>
 </thead>
 <tbody>
@@ -207,11 +207,11 @@ RsAgent 的三大核心能力在实际生产环境中展现出了显著的优势
 
 ## 🖥️ 交互界面与演示
 
-RsAgent 提供了开箱即用的 Web UI，支持完整的 WorkSpace 管理、白盒记忆编辑、以及多智能体协作过程的可视化。
+观境 RS-Agent 提供了开箱即用的 Web UI，支持完整的 WorkSpace 管理、白盒记忆编辑、以及多智能体协作过程的可视化。
 
 ### 使用场景
 
-> 以下所有演示均由端侧模型通过 RsAgent 智能路由完成生成——无需调用云端大模型。
+> 以下所有演示均由端侧模型通过观境 RS-Agent 智能路由完成生成——无需调用云端大模型。
 
 #### 工作文档生成
 
@@ -284,7 +284,7 @@ https://github.com/user-attachments/assets/a7245467-ee3c-4939-a055-c56576ac56d1
 ### 方式一：桌面端安装包 (推荐)
 
 请从 [Releases 页面](https://github.com/qiwenping0327/RS-Agent/releases)
-下载最新的 RsAgent 桌面端安装包。
+下载最新的观境 RS-Agent 桌面端安装包。
 
 ### 方式二：源码启动 (适合开发者)
 
@@ -302,7 +302,7 @@ cd ui && npm install     # 安装 UI 依赖
 cd ..
 ```
 
-> 服务端/CLI 入口名仍为 `pilotdeck`，这是为了兼容上游项目；它是 RsAgent 的一部分，
+> 服务端/CLI 入口名仍为 `pilotdeck`，这是为了兼容上游项目；它是观境 RS-Agent 的一部分，
 > 不是上游发行版。
 
 **桌面端构建所需的运行时二进制（不入库）**
@@ -325,7 +325,7 @@ apps/desktop/resources/bun-bin/bun.exe     # Bun (Windows 版本)
 对应许可证全文见 `LICENSES/Node.js-LICENSE.txt` 与 `LICENSES/Bun-LICENSE.md`。
 
 **2. 配置模型 Provider**
-RsAgent 依赖 `~/.pilotdeck/pilotdeck.yaml` 进行配置（该路径为兼容上游而保留）。您可以手动创建、运行启动脚本自动生成，**或者在启动 Web UI 后直接在设置界面中进行可视化配置**。
+观境 RS-Agent 依赖 `~/.pilotdeck/pilotdeck.yaml` 进行配置（该路径为兼容上游而保留）。您可以手动创建、运行启动脚本自动生成，**或者在启动 Web UI 后直接在设置界面中进行可视化配置**。
 支持 OpenAI、Anthropic、DeepSeek、Qwen、Kimi、MiniMax 等多种协议。
 
 ```yaml
@@ -360,7 +360,7 @@ docker compose up -d
 
 ## 🛠️ 扩展与插件 (Extension Protocol)
 
-RsAgent 继承自 PilotDeck 的开放插件架构，插件代码与开源核心严格隔离。开发者可以通过 `plugin.json` 轻松扩展系统能力：
+观境 RS-Agent 继承自 PilotDeck 的开放插件架构，插件代码与开源核心严格隔离。开发者可以通过 `plugin.json` 轻松扩展系统能力：
 
 - **MCP Servers**: 原生支持集成 Model Context Protocol 服务器。
 - **Tools & Skills**: 注册自定义工具，或通过 [ClawHub](https://www.npmjs.com/package/clawhub) 引入社区 Skill。
@@ -371,7 +371,7 @@ RsAgent 继承自 PilotDeck 的开放插件架构，插件代码与开源核心�
 
 ## 🤝 参与贡献
 
-感谢所有为上游 PilotDeck 提交代码与反馈的开发者。本分支同样欢迎新的成员加入，共同完善 RsAgent。
+感谢所有为上游 PilotDeck 提交代码与反馈的开发者。本分支同样欢迎新的成员加入，共同完善观境 RS-Agent。
 
 贡献流程：**Fork 本仓库 → 创建 Feature 分支 → 提交 PR**。
 
@@ -395,7 +395,7 @@ chmod +x .githooks/pre-commit   # macOS / Linux
   [OpenBMB/PilotDeck Issues](https://github.com/OpenBMB/PilotDeck/issues)。
 - 上游项目的官网、Demo 与社群入口请访问
   [OpenBMB/PilotDeck](https://github.com/OpenBMB/PilotDeck)。这些入口属于上游项目，
-  不代表 RsAgent 本分支。
+  不代表观境 RS-Agent 本分支。
 
 ---
 
@@ -424,7 +424,7 @@ chmod +x .githooks/pre-commit   # macOS / Linux
 
 ## 🏢 上游项目
 
-RsAgent 基于 PilotDeck。上游项目由清华大学
+观境 RS-Agent 基于 PilotDeck。上游项目由清华大学
 [THUNLP](https://nlp.csai.tsinghua.edu.cn/)、[面壁智能](https://modelbest.cn/)、
 [OpenBMB](https://www.openbmb.cn/) 与 [AI9Stars](https://github.com/AI9Stars)
 联合研发。RsAgent Contributors 与上述机构相互独立，本分支未获得其背书。
@@ -469,7 +469,7 @@ RsAgent 基于 PilotDeck。上游项目由清华大学
 
 ## 📄 许可证
 
-RsAgent 是 PilotDeck 的二次开发版本，基于
+观境 RS-Agent 是 PilotDeck 的二次开发版本，基于
 [GNU Affero General Public License v3.0](LICENSE)（AGPL-3.0-only）开源。
 署名、修改声明与第三方许可证见 [NOTICE](NOTICE) 与
 [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md)。
